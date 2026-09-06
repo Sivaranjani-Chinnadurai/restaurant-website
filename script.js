@@ -31,7 +31,7 @@ window.addEventListener('scroll', () => {
 
 // --- WhatsApp Ordering Logic ---
 // Replace this with the actual phone number including country code, e.g., '919876543210' for India
-const WHATSAPP_NUMBER = '919876543210'; 
+const WHATSAPP_NUMBER = '910000000000'; 
 
 function orderViaWhatsApp(message) {
     // Encode the message for the URL
