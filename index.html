@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curry Sappadu | Authentic Non-Veg Cuisine</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            gold: '#D4AF37',
+                            red: '#7A0016',
+                            dark: '#0A0A0A',
+                            surface: '#1A1A1A',
+                            text: '#EFEFEF'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        subheading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-royal-dark text-royal-text font-body antialiased selection:bg-royal-gold selection:text-royal-dark scroll-smooth">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-royal-dark/90 backdrop-blur-md border-b border-royal-gold/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-heading font-bold text-2xl text-royal-gold tracking-wider">CURRY SAPPADU</span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-royal-gold transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-royal-gold transition-colors font-medium">Heritage</a>
+                    <a href="#menu" class="text-gray-300 hover:text-royal-gold transition-colors font-medium">Menu</a>
+                    <a href="#catering" class="text-gray-300 hover:text-royal-gold transition-colors font-medium">Catering</a>
+                </div>
+                <!-- CTA Button -->
+                <div class="hidden md:flex">
+                    <button onclick="orderViaWhatsApp('Hi, I would like to place an order.')" class="inline-block px-8 py-4 bg-royal-gold text-royal-dark font-bold uppercase tracking-widest text-sm rounded transition-all duration-300 hover:bg-yellow-500 hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transform hover:-translate-y-1">Order Now</button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-royal-gold focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-royal-surface border-b border-royal-gold/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-300 hover:text-royal-gold">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-royal-gold">Heritage</a>
+                <a href="#menu" class="block px-3 py-2 text-gray-300 hover:text-royal-gold">Menu</a>
+                <a href="#catering" class="block px-3 py-2 text-gray-300 hover:text-royal-gold">Catering</a>
+                <button onclick="orderViaWhatsApp('Hi, I would like to place an order.')" class="w-full text-left block px-3 py-2 text-royal-gold font-bold">Order Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-royal-dark/70 via-royal-dark/50 to-royal-dark z-10"></div>
+            <!-- High quality background image -->
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=2000" alt="Royal Non-Veg Cuisine" class="w-full h-full object-cover object-center" />
+        </div>
+        
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto mt-10">
+            <h2 class="text-royal-gold font-subheading italic text-xl md:text-2xl mb-4 tracking-widest">A Feast for Kings</h2>
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight drop-shadow-2xl text-white">
+                AUTHENTIC <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-royal-gold to-yellow-600">ROYAL FLAVORS</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Experience the majestic taste of slow-cooked meats, vibrant spices, and recipes passed down through generations.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="inline-block px-8 py-4 bg-royal-gold text-royal-dark font-bold uppercase tracking-widest text-sm rounded transition-all duration-300 hover:bg-yellow-500 hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transform hover:-translate-y-1 text-center">View Menu</a>
+                <a href="#catering" class="inline-block px-8 py-4 bg-transparent border-2 border-royal-gold text-royal-gold font-bold uppercase tracking-widest text-sm rounded transition-all duration-300 hover:bg-royal-gold hover:text-royal-dark hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transform hover:-translate-y-1 text-center">Book for Function</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-royal-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 border-2 border-royal-gold/30 rounded-lg transform translate-x-4 translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=1000" alt="Authentic Spices" class="relative z-10 rounded-lg shadow-2xl w-full h-[500px] object-cover" />
+                </div>
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-[1px] w-12 bg-royal-gold"></div>
+                        <span class="text-royal-gold font-subheading uppercase tracking-widest text-sm font-bold">Our Heritage</span>
+                    </div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">The Legacy of <br/>Rich Spices</h2>
+                    <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                        At Curry Sappadu, we believe that food is not just sustenance; it is a celebration. Our chefs meticulously source the finest meats and freshest spices to recreate the grandeur of royal kitchens.
+                    </p>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        From our signature Dum Biryani to succulent Tandoori delights, every dish is a masterpiece designed to ignite your senses with vibrant colors and rich aromas.
+                    </p>
+                    <!-- Placeholder signature or graphic -->
+                    <div class="font-heading text-2xl text-royal-gold opacity-80 mb-2">Master Chef</div>
+                    <p class="font-subheading italic text-gray-500 text-lg">Culinary Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="py-24 bg-royal-surface border-y border-royal-gold/10 relative overflow-hidden">
+        <!-- Decorative pattern -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23D4AF37\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-royal-gold font-subheading uppercase tracking-widest text-sm font-bold">Discover</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mt-2 text-white">Royal Delicacies</h2>
+                <div class="h-1 w-24 bg-royal-gold mx-auto mt-6 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Dish 1 -->
+                <div class="menu-card group">
+                    <div class="relative overflow-hidden rounded-t-lg h-64">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=800" alt="Nawabi Mutton Biryani" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute top-4 right-4 bg-royal-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Signature</div>
+                    </div>
+                    <div class="p-6 bg-royal-dark border border-t-0 border-royal-gold/20 rounded-b-lg">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-heading text-xl font-bold text-royal-gold">Nawabi Mutton Biryani</h3>
+                            <span class="font-bold text-white text-lg">₹450</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 2 -->
+                <div class="menu-card group">
+                    <div class="relative overflow-hidden rounded-t-lg h-64">
+                        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=800" alt="Shahi Butter Chicken" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    </div>
+                    <div class="p-6 bg-royal-dark border border-t-0 border-royal-gold/20 rounded-b-lg">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-heading text-xl font-bold text-royal-gold">Shahi Butter Chicken</h3>
+                            <span class="font-bold text-white text-lg">₹380</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 3 -->
+                <div class="menu-card group">
+                    <div class="relative overflow-hidden rounded-t-lg h-64">
+                        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80&w=800" alt="Royal Tandoori Platter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute top-4 right-4 bg-royal-gold text-royal-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Popular</div>
+                    </div>
+                    <div class="p-6 bg-royal-dark border border-t-0 border-royal-gold/20 rounded-b-lg">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-heading text-xl font-bold text-royal-gold">Royal Tandoori Platter</h3>
+                            <span class="font-bold text-white text-lg">₹850</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-400 mb-4">Want to see our full menu?</p>
+                <a href="assets/images/full-menu.png" target="_blank" class="text-royal-gold border-b-2 border-royal-gold hover:text-white hover:border-white transition-colors pb-1">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering / Bulk Orders -->
+    <section id="catering" class="py-24 bg-royal-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-royal-surface border border-royal-gold/30 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.1)]">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-10 md:p-16 flex flex-col justify-center">
+                        <span class="text-royal-gold font-subheading uppercase tracking-widest text-2xl font-bold mb-2">Bulk Orders</span>
+                        <h2 class="font-heading text-4xl font-bold mb-6 text-white">Make Your Event <br/>Extraordinary</h2>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            Hosting a wedding, corporate event, or family gathering? Elevate your function with our authentic, bulk-prepared feasts. We bring the royal dining experience straight to your venue with pristine packaging and warm service.
+                        </p>
+                        <ul class="space-y-4 mb-10 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-royal-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                Customized Menus
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-royal-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                Minimum 20 up to 1000+ Guests
+                            </li>
+                        </ul>
+                        <button onclick="orderViaWhatsApp('Hi, I have an inquiry for a bulk catering order for a function.')" class="inline-block px-8 py-4 bg-royal-gold text-royal-dark font-bold uppercase tracking-widest text-sm rounded transition-all duration-300 hover:bg-yellow-500 hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transform hover:-translate-y-1 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Enquire on WhatsApp
+                        </button>
+                    </div>
+                    <div class="h-64 lg:h-auto relative">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1000" alt="Catering Event" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-royal-surface to-transparent hidden lg:block"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-surface to-transparent lg:hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-royal-surface border-t border-royal-gold/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-royal-gold font-subheading uppercase tracking-widest text-sm font-bold">Testimonials</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mt-2 text-white">What Our Guests Say</h2>
+                <div class="h-1 w-24 bg-royal-gold mx-auto mt-6 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-royal-dark p-8 rounded-lg border border-royal-gold/20 relative flex flex-col h-full">
+                    <div class="text-royal-gold text-5xl font-serif absolute -top-2 left-6">"</div>
+                    <p class="text-gray-300 italic mb-6 leading-relaxed mt-4">The biryani tastes very good and the mutton pieces are soft. Really good food.</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-12 h-12 bg-royal-gold/20 rounded-full flex items-center justify-center text-royal-gold font-bold text-xl">K</div>
+                        <div>
+                            <h4 class="text-white font-bold">Karthik</h4>
+                            <div class="flex text-royal-gold text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-royal-dark p-8 rounded-lg border border-royal-gold/20 relative flex flex-col h-full">
+                    <div class="text-royal-gold text-5xl font-serif absolute -top-2 left-6">"</div>
+                    <p class="text-gray-300 italic mb-6 leading-relaxed mt-4">Ordered catering for our family function. Food arrived on time and all our guests liked the taste.</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-12 h-12 bg-royal-gold/20 rounded-full flex items-center justify-center text-royal-gold font-bold text-xl">P</div>
+                        <div>
+                            <h4 class="text-white font-bold">Priya</h4>
+                            <div class="flex text-royal-gold text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-royal-dark p-8 rounded-lg border border-royal-gold/20 relative flex flex-col h-full">
+                    <div class="text-royal-gold text-5xl font-serif absolute -top-2 left-6">"</div>
+                    <p class="text-gray-300 italic mb-6 leading-relaxed mt-4">Good non-veg hotel in this area. Service is neat and food is spicy and tasty. Will come again.</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-12 h-12 bg-royal-gold/20 rounded-full flex items-center justify-center text-royal-gold font-bold text-xl">M</div>
+                        <div>
+                            <h4 class="text-white font-bold">Murugan</h4>
+                            <div class="flex text-royal-gold text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-royal-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading font-bold text-3xl text-royal-gold tracking-wider mb-6">CURRY SAPPADU</h2>
+            <p class="text-gray-500 mb-6 max-w-md mx-auto">Serving the most authentic and royal non-veg delicacies straight to your heart.</p>
+            <p class="text-gray-300 font-bold mb-8">Salem Main road, Veppur, Tamil Nadu 606304</p>
+            <div class="flex justify-center mb-8">
+                <a href="https://maps.app.goo.gl/XcbukmwdCzAf3V7m8" target="_blank" class="text-gray-400 hover:text-royal-gold transition-colors flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    View on Google Maps
+                </a>
+            </div>
+            <p class="text-gray-600 text-sm">&copy; 2026 Curry Sappadu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <button onclick="orderViaWhatsApp('Hi Curry Sappadu, I am reaching out from your website.')" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 hover:shadow-2xl transition-all z-50 flex items-center justify-center group" aria-label="Chat on WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="absolute right-16 bg-white text-gray-900 text-sm font-bold py-1 px-3 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Order on WhatsApp</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

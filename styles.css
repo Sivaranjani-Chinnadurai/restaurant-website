@@ -1,0 +1,25 @@
+/* styles.css */
+
+/* Custom scrollbar for royal feel */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b5952f;
+}
+
+/* Base body styles just in case */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0A0A0A;
+}
